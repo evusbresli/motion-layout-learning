@@ -21,7 +21,9 @@
         android:id="@id/end"
         motion:deriveConstraintsFrom="@id/start">
         <Constraint android:id="@id/pagerPersons">
-            <Layout android:layout_height="?attr/actionBarSize" />
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
         </Constraint>
     </ConstraintSet>
 </MotionScene>

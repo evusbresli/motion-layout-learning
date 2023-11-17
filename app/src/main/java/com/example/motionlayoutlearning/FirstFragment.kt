@@ -1,12 +1,13 @@
 package com.example.motionlayoutlearning
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.motionlayoutlearning.databinding.FragmentFirstBinding
+import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -32,9 +33,9 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+        ListDelegationAdapter(testItemDelegate { findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment) })
+            .apply { items = List(15) { "Test info $it" } }
+            .let { adapter -> binding.recyclerItems.adapter = adapter }
     }
 
     override fun onDestroyView() {

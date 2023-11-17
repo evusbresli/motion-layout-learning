@@ -5,18 +5,25 @@
     android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     app:layoutDescription="@xml/scene_01"
     tools:context=".FirstFragment"
     tools:showPaths="true">
 
-    <Button
-        android:id="@+id/buttonFirst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/frameBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:background="?attr/colorPrimaryContainer"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerItems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pagerPersons"
+            tools:listitem="@layout/item_person" />
+    </FrameLayout>
 </androidx.constraintlayout.motion.widget.MotionLayout>
