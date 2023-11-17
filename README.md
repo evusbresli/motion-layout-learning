@@ -1,1 +1,1 @@
-[![](https://jitpack.io/v/rambler-digital-solutions/swipe-layout-android.svg)](https://jitpack.io/#rambler-digital-solutions/swipe-layout-android)
+
