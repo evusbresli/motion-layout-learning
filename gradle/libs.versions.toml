@@ -1,0 +1,16 @@
+[versions]
+minSdkVersion = "24"
+androidGradlePlugin = "8.1.2"
+kotlinGradlePlugin = "1.9.0"
+navigationSafeargsPlugin = "2.7.4"
+swipe = "1.1.0"
+
+[libraries]
+swipe = { group = "ru.rambler.android", name = "swipe-layout", version.ref = "swipe" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
+safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationSafeargsPlugin" }
